@@ -1,0 +1,35 @@
+.claas-logo {
+    left: 30px;
+    position: absolute;
+    top: 30px;
+}
+
+.load-button {
+    left: 580px;
+    position: absolute;
+    top: 130px;
+}
+
+.head-line {
+    left: 520px;
+    position: absolute;
+    top: 35px;
+}
+
+.fifty-hour-button {
+    left: 50px;
+    position: absolute;
+    top: 230px;
+}
+
+.factory-button {
+    left:50px;
+    position: absolute;
+    top: 300px;
+}
+
+.show-table {
+    left: 300px;
+    position: absolute;
+    top: 225px;
+}

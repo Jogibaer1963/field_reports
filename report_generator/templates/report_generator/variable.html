@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+   <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>yeah</title>
+    <script src="{% static 'report_generator/js/bootstrap.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'report_generator/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'report_generator/css/report_generator_styles.css' %}">
+</head>
+<body>
+<div class="claas-logo">
+    <img src="{% static 'report_generator/images/claas_logo.png' %}" alt="Claas Logo">
+</div>
+<div class="head-line">
+    <h3>Field Report Review</h3>
+</div>
+<div class="load-button">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="file">Choose a file:</label>
+        <input type="file" name="file" id="file">
+        <br>
+        <input type="submit" value="Upload">
+<!--
+        <input type="file" class="btn btn-info btn-default" name="file">
+        <button type="submit" class="btn btn-info btn-default load-excel-button">Load Excel File</button>
+-->
+    </form>
+</div>
+
+ <div class="fifty-hour-button">
+        <button class="btn btn-success btn-default load-excel-button">Show 50 Hour Claims</button>
+    </div>
+ <div class="factory-button">
+        <button class="btn btn-success btn-default load-excel-button">Show Factory-Claims</button>
+    </div>
+    <div  class="show-table table-responsive-md">
+        <table class="table table-bordered table-striped table-hover">
+            {% for row in data %}
+            <tr>
+                {% for value in row %}
+                <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+
+
+
+<!--
+
+      <h3>Variable</h3>
+    <h4>{{ first_name }} {{ last_name }}</h4>
+    <ul>
+        {% for jelly in some_list %}
+       <li>{{ jelly }}</li>
+        {% endfor %}
+    </ul>
+    <ul>
+          {% for k, v in some_dict.items %}
+           <li> <h2> {{ v }} {{ k }}</h2></li>
+            {% endfor %}
+    </ul>
+
+    -->
+
+</body>
+</html>
